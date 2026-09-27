@@ -5,10 +5,10 @@
    ========================================================================== */
 
 const SITE = {
-  email:    "your.email@example.com",                    // TODO
-  linkedin: "https://www.linkedin.com/in/your-handle",   // TODO
-  github:   "https://github.com/your-username",          // TODO
-  resume:   "assets/resume.pdf",  // put your PDF at this path (or paste a full https:// link)
+  email:    "howardziyuantang@gmail.com",                   
+  linkedin: "https://www.linkedin.com/in/howard-tang1/",   
+  github:   "https://github.com/howardziyuantang",          
+  resume:   "assets/resume.pdf", 
 };
 // Leave a link as "" to hide its button everywhere.
 
@@ -24,21 +24,21 @@ const SITE = {
 */
 const PROJECTS = [
   {
-    slug:      "robotic-vehicle",          // = file name in /projects, without .html
+    slug:      "robotic-vehicle",          
     title:     "Semi-Autonomous Robotic Vehicle",
-    summary:   "[One-sentence summary shown on the card.]",
-    tags:      ["Robotics", "[Tag]", "[Tag]"],
-    date:      "[20XX]",                   // e.g. "Fall 2025" or "2025 – Present"
-    status:    "",                         // optional, e.g. "In progress"
-    thumbnail: "",                         // e.g. "assets/projects/robotic-vehicle/thumb.jpg" (16:9 looks best; .mp4 works too)
+    summary:   "Differential drive robotic vehicle integrating odometry, complementary filtering, drift correction. All components (PCB, firmware, chassis, motor/sensor mounts...) designed and built from scratch across 3 years.",
+    tags:      ["Robotics", "Autonomous Vehicles", "Engineering Design"],
+    date:      "2023-2025",                   
+    status:    "Complete",                        
+    thumbnail: "assets/robotic-vehicle/thumb.jpg",                         
   },
   {
     slug:      "fo4dsmplx",
     title:     "FO4DSMPLX",
-    summary:   "[One-sentence summary shown on the card.]",
-    tags:      ["[Tag]", "[Tag]", "[Tag]"],
-    date:      "[20XX]",
-    status:    "",
-    thumbnail: "",
+    summary:   "Human-parametric-model-enhanced open-source, modular, and training-free 4D camera redirection framework.",
+    tags:      ["Computer Vision", "4D Human-Scene Reconstruction", "Camera Redirection"],
+    date:      "Summer 2026",
+    status:    "Complete",
+    thumbnail: "assets/projects/fo4dsmplx/thumb.mp4",
   },
 ];
