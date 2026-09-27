@@ -30,7 +30,7 @@ const PROJECTS = [
     tags:      ["Robotics", "Autonomous Vehicles", "Engineering Design"],
     date:      "2023-2025",                   
     status:    "Complete",                        
-    thumbnail: "assets/robotic-vehicle/thumb.jpg",                         
+    thumbnail: "assets/projects/robotic-vehicle/thumb.jpg",                         
   },
   {
     slug:      "fo4dsmplx",
