@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Project Title] — Howard Tang</title>
+  <meta name="description" content="[One-sentence summary of the project.]">
+  <meta name="theme-color" content="#18181b">
+  <meta name="robots" content="noindex"><!-- TEMPLATE-ONLY: delete this line in real project pages -->
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="[Project Title] — Howard Tang">
+  <meta property="og:description" content="[One-sentence summary of the project.]">
+  <!-- <meta property="og:image" content="https://YOUR-DOMAIN/assets/projects/SLUG/thumb.jpg"> -->
+
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../" data-project="SLUG">
+<!--
+  ════════════════════════════════════════════════════════════════════════
+  PROJECT PAGE — HOW TO EDIT
+  ════════════════════════════════════════════════════════════════════════
+  • Replace anything in [square brackets]. Delete any section you don't need
+    (section numbers 01, 02, 03… renumber themselves).
+  • data-project="…" on <body> must match this project's slug in js/data.js.
+  • Put this project's media in  assets/projects/<slug>/
+
+  MEDIA — replace a  <div class="placeholder">…</div>  with ONE of these:
+
+    Image:    <img src="../assets/projects/<slug>/photo.jpg" alt="What the image shows">
+    GIF:      <img src="../assets/projects/<slug>/demo.gif" alt="What it shows">
+    Video:    <video src="../assets/projects/<slug>/demo.mp4" autoplay muted loop playsinline></video>
+              ↑ best for animations — an MP4 is usually 5–10× smaller than the same GIF
+    YouTube:  <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Demo video" allowfullscreen></iframe>
+
+  FRAME SHAPE — add a word to class="media":
+    media            16:9, cropped to fill (default, good for photos)
+    media natural    the image's own shape, never cropped (diagrams, CAD, plots)
+    media square     1:1
+    media portrait   4:5
+
+  Images on this page enlarge when clicked.
+  ════════════════════════════════════════════════════════════════════════
+-->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAV ================= -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../index.html" aria-label="Howard Tang — home">
+        <span class="brand-mark" aria-hidden="true">HT</span>
+        <span>Howard Tang</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li class="hide-sm"><a href="../index.html#about">About</a></li>
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li class="hide-sm"><a href="#contact">Contact</a></li>
+          <li><a class="nav-resume" data-link="resume" href="../assets/resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container project">
+
+    <a class="back-link" href="../index.html#projects">
+      <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      All projects
+    </a>
+
+    <!-- ================= HEADER ================= -->
+    <header class="project-header">
+      <p class="project-eyebrow">[Course / Team / Personal project] · [Semester 20XX]</p>
+      <h1>[Project Title]</h1>
+      <p class="project-lead">[One or two sentences: what it is, what it does, and the headline result.]</p>
+      <ul class="tags">
+        <li>[Tag]</li>
+        <li>[Tag]</li>
+        <li>[Tag]</li>
+      </ul>
+
+      <!-- Delete any button you don't have a link for -->
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#" target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          Code
+        </a>
+        <a class="btn" href="#" target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5 3.5-5 3.5z"/></svg>
+          Demo video
+        </a>
+        <a class="btn" href="#" target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
+          Report (PDF)
+        </a>
+      </div>
+    </header>
+
+    <!-- ================= QUICK FACTS ================= -->
+    <dl class="facts-strip">
+      <div><dt>Role</dt><dd>[Your role]</dd></div>
+      <div><dt>Timeline</dt><dd>[Start – End]</dd></div>
+      <div><dt>Team</dt><dd>[Solo / N people]</dd></div>
+      <div><dt>Tools</dt><dd>[Software, hardware, languages]</dd></div>
+    </dl>
+
+    <!-- ================= HERO MEDIA ================= -->
+    <figure class="project-hero">
+      <div class="media">
+        <div class="placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-4.5-4.5L7 20"/></svg>
+          <span>Hero image or video · 16:9</span>
+        </div>
+      </div>
+      <figcaption>[Caption: what we're looking at.]</figcaption>
+    </figure>
+
+    <!-- ================= WRITE-UP ================= -->
+    <article class="prose">
+
+      <section id="overview">
+        <h2>Overview</h2>
+        <p class="callout">[TL;DR in 2–3 sentences. A recruiter should understand what you built and why it matters from this box alone.]</p>
+      </section>
+
+      <section id="problem">
+        <h2>Problem &amp; Goals</h2>
+        <p>[What problem were you solving, and for whom? What made it hard?]</p>
+        <ul>
+          <li>[Requirement, constraint, or success criterion]</li>
+          <li>[Requirement, constraint, or success criterion]</li>
+          <li>[Requirement, constraint, or success criterion]</li>
+        </ul>
+      </section>
+
+      <section id="role">
+        <h2>My Role</h2>
+        <p>[Especially for team projects: exactly which parts were yours.]</p>
+        <ul>
+          <li>[Verb-first contribution, e.g. “Designed…”, “Implemented…”, “Tested…”]</li>
+          <li>[Verb-first contribution]</li>
+          <li>[Verb-first contribution]</li>
+        </ul>
+      </section>
+
+      <section id="design">
+        <h2>Design &amp; Build</h2>
+        <p>[How it works: system architecture, key design decisions, and the trade-offs behind them.]</p>
+
+        <div class="media-grid">
+          <figure>
+            <div class="media">
+              <div class="placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-4.5-4.5L7 20"/></svg>
+                <span>Diagram, CAD, or photo</span>
+              </div>
+            </div>
+            <figcaption>Figure 1: [caption]</figcaption>
+          </figure>
+          <figure>
+            <div class="media">
+              <div class="placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-4.5-4.5L7 20"/></svg>
+                <span>Diagram, CAD, or photo</span>
+              </div>
+            </div>
+            <figcaption>Figure 2: [caption]</figcaption>
+          </figure>
+        </div>
+
+        <h3>[Optional sub-heading, e.g. a subsystem]</h3>
+        <p>[More detail on one part of the design.]</p>
+      </section>
+
+      <section id="results">
+        <h2>Results</h2>
+        <div class="stats">
+          <div class="stat"><div class="stat-value metal">[XX%]</div><div class="stat-label">[What this number measures]</div></div>
+          <div class="stat"><div class="stat-value metal">[XX]</div><div class="stat-label">[What this number measures]</div></div>
+          <div class="stat"><div class="stat-value metal">[XX×]</div><div class="stat-label">[What this number measures]</div></div>
+        </div>
+        <p>[How you tested it, what the numbers mean, and how they compare to your goals.]</p>
+
+        <figure>
+          <div class="media">
+            <div class="placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5 3.5-5 3.5z"/></svg>
+              <span>Demo video or GIF · 16:9</span>
+            </div>
+          </div>
+          <figcaption>[Caption: what the demo shows.]</figcaption>
+        </figure>
+      </section>
+
+      <section id="lessons">
+        <h2>Challenges &amp; Lessons</h2>
+        <p>[The hardest problem you hit, how you debugged it, and what you'd do differently next time.]</p>
+      </section>
+
+      <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="media-grid cols-3">
+          <figure><div class="media square"><div class="placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-4.5-4.5L7 20"/></svg><span>Image</span></div></div></figure>
+          <figure><div class="media square"><div class="placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-4.5-4.5L7 20"/></svg><span>Image</span></div></div></figure>
+          <figure><div class="media square"><div class="placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-4.5-4.5L7 20"/></svg><span>Image</span></div></div></figure>
+        </div>
+      </section>
+
+      <section id="links">
+        <h2>Links &amp; Resources</h2>
+        <ul class="resource-list">
+          <li>
+            <a href="#" target="_blank" rel="noopener">
+              <span><span class="resource-title">[Resource name]</span><span class="resource-meta">[e.g. GitHub · source code]</span></span>
+              <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" target="_blank" rel="noopener">
+              <span><span class="resource-title">[Resource name]</span><span class="resource-meta">[e.g. PDF · final report]</span></span>
+              <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </article>
+
+    <!-- Previous / next project links are generated from js/data.js -->
+    <nav class="project-nav" id="project-nav" aria-label="More projects"></nav>
+  </main>
+
+  <!-- ================= FOOTER / CONTACT ================= -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <h2 class="footer-title">Get in touch</h2>
+          <p class="footer-text">[One line on what you're looking for, e.g. “Open to Summer 20XX internships in …”]</p>
+          <a class="footer-email" data-link="email" href="#"><span data-email>your.email@example.com</span></a>
+        </div>
+        <ul class="footer-links">
+          <li><a data-link="linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a data-link="github" href="#" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a data-link="resume" href="../assets/resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Howard Tang</span>
+        <span>Designed &amp; built by hand</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
