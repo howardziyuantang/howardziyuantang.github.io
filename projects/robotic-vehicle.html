@@ -75,159 +75,109 @@
 
     <!-- ================= HEADER ================= -->
     <header class="project-header">
-      <p class="project-eyebrow">[Course / Team / Personal project] · [Semester 20XX]</p>
       <h1>Semi-Autonomous Robotic Vehicle</h1>
-      <p class="project-lead">[One or two sentences: what it is, what it does, and the headline result.]</p>
+      <p class="project-lead">Fully-custom differential drive robot for precise maze navigation.</p>
       <ul class="tags">
-        <li>[Tag]</li>
-        <li>[Tag]</li>
-        <li>[Tag]</li>
+        <li>CAD</li>
+        <li>PCB Design</li>
+        <li>Embedded Systems</li>
       </ul>
 
       <!-- Delete any button you don't have a link for -->
       <div class="btn-row">
-        <a class="btn btn-primary" href="#" target="_blank" rel="noopener">
+        <a class="btn btn-primary" href="https://github.com/howardziyuantang/semi-autonomous-robot" target="_blank" rel="noopener">
           <svg class="i" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
           Code
         </a>
-        <a class="btn" href="#" target="_blank" rel="noopener">
-          <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5 3.5-5 3.5z"/></svg>
-          Demo video
-        </a>
-        <a class="btn" href="#" target="_blank" rel="noopener">
+        <a class="btn" href="https://drive.google.com/drive/folders/1lXvUf6fRffnAlMyNL_UezKIN-9-0Paeg?usp=sharing" target="_blank" rel="noopener">
           <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
-          Report (PDF)
+          CAD
         </a>
       </div>
     </header>
 
     <!-- ================= QUICK FACTS ================= -->
     <dl class="facts-strip">
-      <div><dt>Role</dt><dd>[Your role]</dd></div>
-      <div><dt>Timeline</dt><dd>[Start – End]</dd></div>
-      <div><dt>Team</dt><dd>[Solo / N people]</dd></div>
-      <div><dt>Tools</dt><dd>[Software, hardware, languages]</dd></div>
+      
     </dl>
 
     <!-- ================= HERO MEDIA ================= -->
     <figure class="project-hero">
       <div class="media">
-        <div class="placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-4.5-4.5L7 20"/></svg>
-          <span>Hero image or video · 16:9</span>
-        </div>
+        <video src="../assets/projects/robotic-vehicle/looped.mp4" autoplay muted loop playsinline></video>
       </div>
-      <figcaption>[Caption: what we're looking at.]</figcaption>
+      <figcaption>CAD assembly (Fusion 360)</figcaption>
     </figure>
 
     <!-- ================= WRITE-UP ================= -->
     <article class="prose">
 
-      <section id="overview">
-        <h2>Overview</h2>
-        <p class="callout">[TL;DR in 2–3 sentences. A recruiter should understand what you built and why it matters from this box alone.]</p>
-      </section>
-
-      <section id="problem">
-        <h2>Problem &amp; Goals</h2>
-        <p>[What problem were you solving, and for whom? What made it hard?]</p>
-        <ul>
-          <li>[Requirement, constraint, or success criterion]</li>
-          <li>[Requirement, constraint, or success criterion]</li>
-          <li>[Requirement, constraint, or success criterion]</li>
-        </ul>
-      </section>
-
-      <section id="role">
-        <h2>My Role</h2>
-        <p>[Especially for team projects: exactly which parts were yours.]</p>
-        <ul>
-          <li>[Verb-first contribution, e.g. “Designed…”, “Implemented…”, “Tested…”]</li>
-          <li>[Verb-first contribution]</li>
-          <li>[Verb-first contribution]</li>
-        </ul>
-      </section>
-
       <section id="design">
         <h2>Design &amp; Build</h2>
-        <p>[How it works: system architecture, key design decisions, and the trade-offs behind them.]</p>
-
+        <h3>PCB Design</h3>
+        <p>Custom PCB designed and manufactured with EasyEDA. <br> Integrates: Teensy 4.0, voltage regulators, IMU, motor driver, killswitch.</p>
         <div class="media-grid">
           <figure>
             <div class="media">
-              <div class="placeholder">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-4.5-4.5L7 20"/></svg>
-                <span>Diagram, CAD, or photo</span>
-              </div>
+              <img src="../assets/projects/robotic-vehicle/schematic.png" alt="pcb schematic">
             </div>
-            <figcaption>Figure 1: [caption]</figcaption>
+            <figcaption>PCB schematic</figcaption>
           </figure>
           <figure>
             <div class="media">
-              <div class="placeholder">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-4.5-4.5L7 20"/></svg>
-                <span>Diagram, CAD, or photo</span>
-              </div>
+              <img src="../assets/projects/robotic-vehicle/pcb.png" alt="pcb">
             </div>
-            <figcaption>Figure 2: [caption]</figcaption>
+            <figcaption>PCB layout</figcaption>
           </figure>
         </div>
 
-        <h3>[Optional sub-heading, e.g. a subsystem]</h3>
-        <p>[More detail on one part of the design.]</p>
-      </section>
-
-      <section id="results">
-        <h2>Results</h2>
-        <div class="stats">
-          <div class="stat"><div class="stat-value">[XX%]</div><div class="stat-label">[What this number measures]</div></div>
-          <div class="stat"><div class="stat-value">[XX]</div><div class="stat-label">[What this number measures]</div></div>
-          <div class="stat"><div class="stat-value">[XX×]</div><div class="stat-label">[What this number measures]</div></div>
-        </div>
-        <p>[How you tested it, what the numbers mean, and how they compare to your goals.]</p>
-
-        <figure>
-          <div class="media">
-            <div class="placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m10 8.5 5 3.5-5 3.5z"/></svg>
-              <span>Demo video or GIF · 16:9</span>
+        <h3>Custom Parts</h3>
+        <p>Manufactured via FDM and laser cutting.</p>
+        <div class="media-grid">
+          <figure>
+            <div class="media-vert" style="max-width: 360px;">
+              <img src="../assets/projects/robotic-vehicle/custom parts.JPG" alt="custom parts">
             </div>
-          </div>
-          <figcaption>[Caption: what the demo shows.]</figcaption>
-        </figure>
-      </section>
-
-      <section id="lessons">
-        <h2>Challenges &amp; Lessons</h2>
-        <p>[The hardest problem you hit, how you debugged it, and what you'd do differently next time.]</p>
-      </section>
-
-      <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="media-grid cols-3">
-          <figure><div class="media square"><div class="placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-4.5-4.5L7 20"/></svg><span>Image</span></div></div></figure>
-          <figure><div class="media square"><div class="placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-4.5-4.5L7 20"/></svg><span>Image</span></div></div></figure>
-          <figure><div class="media square"><div class="placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="m21 15-4.5-4.5L7 20"/></svg><span>Image</span></div></div></figure>
+            <figcaption>3D-printed mounts, laser-cut chassis</figcaption>
+          </figure>
         </div>
+
+        <h3>Design Evolution</h3>
+        <p>Cycle 1: <br> Kit + LCD <br> Problems: bulky, poor traction, inaccurate</p>
+        <p>Cycle 2: <br> Upgraded wheels (better traction), x4 ultrasonic sensors, +1 IMU <br> <b>FATAL FLAW: can't turn!</b></p>
+        <p>Cycle 3: <br> Revert to differential drive, x2 ultrasonic sensors, +2 stabilizing bearings <br> Problem: bulky, ultrasonic sensors inaccurate</p>
+        <p>Cycle 4: <br> Custom PCB, <s>Arduino Uno</s> -> Teensy 4.0, <s>ultrasonic</s> -> ToF, compact</p>
+      
+        <div class="media-grid-4">
+          <figure>
+            <div class="media-vert">
+              <img src="../assets/projects/robotic-vehicle/rt iter 1.jpeg" alt="iter 1">
+            </div>
+            <figcaption>Cycle 1</figcaption>
+          </figure>
+          <figure>
+            <div class="media-vert">
+              <img src="../assets/projects/robotic-vehicle/rt iter 2.JPG" alt="iter 2">
+            </div>
+            <figcaption>Cycle 2</figcaption>
+          </figure>
+          <figure>
+            <div class="media-vert">
+              <img src="../assets/projects/robotic-vehicle/rt iter 3.JPG" alt="iter 3">
+            </div>
+            <figcaption>Cycle 3</figcaption>
+          </figure>
+          <figure>
+            <div class="media-vert">
+              <img src="../assets/projects/robotic-vehicle/rt final.JPG" alt="final iter">
+            </div>
+            <figcaption>Cycle 4</figcaption>
+          </figure>
+        </div>
+
       </section>
 
-      <section id="links">
-        <h2>Links &amp; Resources</h2>
-        <ul class="resource-list">
-          <li>
-            <a href="#" target="_blank" rel="noopener">
-              <span><span class="resource-title">[Resource name]</span><span class="resource-meta">[e.g. GitHub · source code]</span></span>
-              <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" target="_blank" rel="noopener">
-              <span><span class="resource-title">[Resource name]</span><span class="resource-meta">[e.g. PDF · final report]</span></span>
-              <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
-            </a>
-          </li>
-        </ul>
-      </section>
+
 
     </article>
 
