@@ -15,6 +15,22 @@ const SITE = {
 
 
 /*
+  Zoom for videos on project pages. Only applies to videos marked with
+  data-zoom, e.g.  <video src="..." data-zoom autoplay muted loop playsinline></video>
+    clickToEnlarge: click the video to open it full-size (like images)
+    hoverMagnifier: show a magnifying lens that follows the cursor (mouse only)
+    magnifierZoom:  how much the lens magnifies (2 = 2×)
+    magnifierSize:  lens width/height in pixels
+*/
+const VIDEO_ZOOM = {
+  clickToEnlarge: true,
+  hoverMagnifier: true,
+  magnifierZoom:  3,
+  magnifierSize:  100,
+};
+
+
+/*
   Current / upcoming projects. Small cards, no project page needed.
     thumbnail: optional image or .mp4 — if set, it shows above the title
     url:       optional — if set, the whole card becomes a link

@@ -5,6 +5,7 @@
      • builds the Current and Past project cards on the home page
      • builds the previous/next links at the bottom of each project page
      • click-to-enlarge for images on project pages
+     • click-to-enlarge and hover magnifier for data-zoom videos (see VIDEO_ZOOM)
    ========================================================================== */
 
 (function () {
@@ -99,30 +100,126 @@
     projectNav.innerHTML = (prev ? link(prev, "prev") : "") + (next ? link(next, "next") : "");
   }
 
-  /* ---- Click an image on a project page to enlarge it ---- */
-  const zoomable = document.querySelectorAll(".prose .media img, .project-hero .media img");
-  if (zoomable.length && typeof HTMLDialogElement === "function") {
+  /* ---- Click an image (or a data-zoom video) on a project page to enlarge it ---- */
+  const videoZoom = typeof VIDEO_ZOOM !== "undefined" ? VIDEO_ZOOM : {};
+  const zoomImages = document.querySelectorAll(".prose .media img, .project-hero .media img");
+  const zoomVideos = document.querySelectorAll(".prose .media video[data-zoom], .project-hero .media video[data-zoom]");
+  const enlargeVideos = videoZoom.clickToEnlarge ? zoomVideos : [];
+
+  if ((zoomImages.length || enlargeVideos.length) && typeof HTMLDialogElement === "function") {
     const dialog = document.createElement("dialog");
     dialog.className = "lightbox";
-    dialog.innerHTML = '<img alt="">';
+    dialog.innerHTML = '<img alt=""><video muted loop playsinline></video>';
     document.body.appendChild(dialog);
-    const big = dialog.querySelector("img");
+    const bigImg = dialog.querySelector("img");
+    const bigVid = dialog.querySelector("video");
     dialog.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("close", () => {
+      bigVid.pause();
+      bigVid.removeAttribute("src");
+      bigVid.load();
+    });
 
-    zoomable.forEach((img) => {
-      img.classList.add("zoomable");
-      img.tabIndex = 0;
-      const open = () => {
-        big.src = img.currentSrc || img.src;
-        big.alt = img.alt;
-        dialog.showModal();
-      };
-      img.addEventListener("click", open);
-      img.addEventListener("keydown", (e) => {
+    const makeZoomable = (el, open) => {
+      el.classList.add("zoomable");
+      el.tabIndex = 0;
+      el.addEventListener("click", open);
+      el.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
           open();
         }
+      });
+    };
+
+    zoomImages.forEach((img) =>
+      makeZoomable(img, () => {
+        bigVid.hidden = true;
+        bigImg.hidden = false;
+        bigImg.src = img.currentSrc || img.src;
+        bigImg.alt = img.alt;
+        dialog.showModal();
+      })
+    );
+
+    enlargeVideos.forEach((vid) =>
+      makeZoomable(vid, () => {
+        bigImg.hidden = true;
+        bigVid.hidden = false;
+        bigVid.src = vid.currentSrc || vid.src;
+        bigVid.addEventListener("loadedmetadata", () => { bigVid.currentTime = vid.currentTime; }, { once: true });
+        dialog.showModal();
+        bigVid.play().catch(() => {});
+      })
+    );
+  }
+
+  /* ---- Hover a data-zoom video to see it through a magnifying lens ---- */
+  const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (videoZoom.hoverMagnifier && canHover) {
+    const ZOOM = Math.max(1, Number(videoZoom.magnifierZoom) || 3);
+    const SIZE = Math.max(40, Number(videoZoom.magnifierSize) || 160);
+
+    const bg = getComputedStyle(document.documentElement).getPropertyValue("--bg").trim() || "#18181b";
+
+    zoomVideos.forEach((vid) => {
+      const box = vid.parentElement;
+      const lens = document.createElement("canvas");
+      lens.className = "magnifier";
+      lens.style.width = lens.style.height = SIZE + "px";
+      lens.setAttribute("aria-hidden", "true");
+      // Lives on <body> so the box's overflow:hidden can't clip it at the video edges
+      document.body.appendChild(lens);
+      const ctx = lens.getContext("2d");
+      let cx = 0, cy = 0, raf = 0;
+
+      const draw = () => {
+        raf = requestAnimationFrame(draw);
+        if (!vid.videoWidth) return;
+        const dpr = window.devicePixelRatio || 1;
+        const px = Math.round(SIZE * dpr);
+        if (lens.width !== px) lens.width = lens.height = px;
+        ctx.imageSmoothingEnabled = false;
+
+        // Map pointer coordinates to source pixels, accounting for object-fit (cover or contain)
+        const r = vid.getBoundingClientRect();
+        const fit = getComputedStyle(vid).objectFit === "contain" ? Math.min : Math.max;
+        const s = fit(r.width / vid.videoWidth, r.height / vid.videoHeight);
+        const ox = (r.width - vid.videoWidth * s) / 2;
+        const oy = (r.height - vid.videoHeight * s) / 2;
+        const src = SIZE / ZOOM / s;
+        const sx = (cx - r.left - ox) / s - src / 2;
+        const sy = (cy - r.top - oy) / s - src / 2;
+
+        // Only draw the part of the source that exists; everything else stays page background
+        const x0 = Math.max(0, sx), y0 = Math.max(0, sy);
+        const x1 = Math.min(vid.videoWidth, sx + src), y1 = Math.min(vid.videoHeight, sy + src);
+        const k = px / src;
+        ctx.fillStyle = bg;
+        ctx.fillRect(0, 0, px, px);
+        if (x1 > x0 && y1 > y0) {
+          ctx.drawImage(vid, x0, y0, x1 - x0, y1 - y0, (x0 - sx) * k, (y0 - sy) * k, (x1 - x0) * k, (y1 - y0) * k);
+        }
+        lens.style.transform = `translate(${cx - SIZE / 2}px, ${cy - SIZE / 2}px)`;
+      };
+
+      const track = (e) => {
+        cx = e.clientX;
+        cy = e.clientY;
+      };
+      box.addEventListener("pointermove", track);
+      box.addEventListener("pointerenter", (e) => {
+        if (e.pointerType === "touch") return;
+        track(e);
+        box.classList.add("magnifying");
+        lens.classList.add("on");
+        if (!raf) raf = requestAnimationFrame(draw);
+      });
+      box.addEventListener("pointerleave", () => {
+        box.classList.remove("magnifying");
+        lens.classList.remove("on");
+        cancelAnimationFrame(raf);
+        raf = 0;
       });
     });
   }

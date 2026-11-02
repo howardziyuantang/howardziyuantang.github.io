@@ -399,10 +399,29 @@ figcaption { margin-top: 10px; font-size: 13.5px; color: var(--text-faint); }
 }
 .placeholder svg { width: 28px; height: 28px; }
 
-img.zoomable { cursor: zoom-in; }
+.zoomable { cursor: zoom-in; }
 .lightbox { max-width: 94vw; max-height: 94vh; padding: 0; border: 0; background: transparent; cursor: zoom-out; }
 .lightbox::backdrop { background: rgba(10, 10, 12, 0.9); }
-.lightbox img { max-width: 94vw; max-height: 90vh; border-radius: 8px; }
+.lightbox img,
+.lightbox video { display: block; max-width: 94vw; max-height: 90vh; border-radius: 8px; }
+.lightbox [hidden] { display: none; }
+
+.magnifier {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.magnifier.on { opacity: 1; }
+.magnifying,
+.magnifying * { cursor: none !important; }
 
 /* ---------- Project page ---------- */
 
