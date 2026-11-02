@@ -55,12 +55,19 @@ const CURRENT = [
 */
 const PROJECTS = [
   {
+    slug:      "vid2symbol",
+    title:     "Vid2Symbol",
+    summary:   "Gradio UI with OpenCV video processing for video to symbol conversion.",
+    tags:      ["OpenCV", "Video Processing", "Gradio"],
+    date:      "Nov. 2026",
+    thumbnail: "assets/projects/vid2symbol/thumb.mp4",
+  },
+  {
     slug:      "fo4dsmplx",
     title:     "FO4DSMPLX",
     summary:   "4D human-scene reconstruction with expressive human parametric models for precise camera redirection.",
     tags:      ["Computer Vision", "4D Human-Scene Reconstruction", "Camera Redirection"],
     date:      "May - July 2026",
-    status:    "Complete",
     thumbnail: "assets/projects/fo4dsmplx/thumb.mp4",
   },
   {
@@ -69,7 +76,6 @@ const PROJECTS = [
     summary:   "Compact differential drive robotic vehicle. Designed, programmed and built from scratch.",
     tags:      ["Robotics", "Autonomous Vehicles", "Engineering Design"],
     date:      "Sept. 2023 - March 2025",
-    status:    "Complete",
     thumbnail: "assets/projects/robotic-vehicle/thumb.jpg",
   },
 ];

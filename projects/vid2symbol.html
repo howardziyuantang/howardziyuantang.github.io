@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vid2Symbol — Howard Tang</title>
+  <meta name="description" content="[One-sentence summary of the project.]">
+  <meta name="theme-color" content="#18181b">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Vid2Symbol — Howard Tang">
+  <meta property="og:description" content="[One-sentence summary of the project.]">
+  <!-- <meta property="og:image" content="https://YOUR-DOMAIN/assets/projects/vid2symbol/thumb.mp4"> -->
+
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+</head>
+<body data-root="../" data-project="vid2symbol">
+<!--
+  ════════════════════════════════════════════════════════════════════════
+  PROJECT PAGE — HOW TO EDIT
+  ════════════════════════════════════════════════════════════════════════
+  • Replace anything in [square brackets]. Delete any section you don't need
+    (section numbers 01, 02, 03… renumber themselves).
+  • data-project="…" on <body> must match this project's slug in js/data.js.
+  • Put this project's media in  assets/projects/<slug>/
+
+  MEDIA — replace a  <div class="placeholder">…</div>  with ONE of these:
+
+    Image:    <img src="../assets/projects/<slug>/photo.jpg" alt="What the image shows">
+    GIF:      <img src="../assets/projects/<slug>/demo.gif" alt="What it shows">
+    Video:    <video src="../assets/projects/<slug>/demo.mp4" autoplay muted loop playsinline></video>
+              ↑ best for animations — an MP4 is usually 5–10× smaller than the same GIF
+    YouTube:  <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="Demo video" allowfullscreen></iframe>
+
+  FRAME SHAPE — add a word to class="media":
+    media            16:9, cropped to fill (default, good for photos)
+    media natural    the image's own shape, never cropped (diagrams, CAD, plots)
+    media square     1:1
+    media portrait   4:5
+
+  Images on this page enlarge when clicked.
+  ════════════════════════════════════════════════════════════════════════
+-->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAV ================= -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <ul class="header-links">
+        <li><a class="resume-link" data-link="resume" href="../assets/resume.pdf" target="_blank" rel="noopener" aria-label="Resume"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><span>Resume</span></a></li>
+        <li><a data-link="linkedin" href="#" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a></li>
+        <li><a data-link="github" href="#" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg class="i" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
+        <li><a data-link="email" href="#" aria-label="Email" title="Email"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a></li>
+      </ul>
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="../index.html#projects">Projects</a></li>
+          <li class="hide-xs"><a href="../index.html#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container project">
+
+    <a class="back-link" href="../index.html#projects">
+      <svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      All projects
+    </a>
+
+    <!-- ================= HEADER ================= -->
+    <header class="project-header">
+      <h1>Vid2Symbol</h1>
+      <p class="project-lead">Video to symbol conversion using OpenCV and Gradio UI.</p>
+      <ul class="tags">
+        <li>OpenCV</li>
+        <li>Video Processing</li>
+        <li>Gradio</li>
+      </ul>
+
+      <!-- Delete any button you don't have a link for -->
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://github.com/howardziyuantang/vid2symbol" target="_blank" rel="noopener">
+          <svg class="i" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          Code
+        </a>
+      </div>
+    </header>
+
+    <!-- ================= QUICK FACTS ================= -->
+    <dl class="facts-strip">
+      
+    </dl>
+
+    <!-- ================= HERO MEDIA ================= -->
+    <figure class="project-hero">
+      <div class="media">
+        <video src="../assets/projects/vid2symbol/thumb.mp4" autoplay muted loop playsinline></video>
+      </div>
+      <figcaption>Example output (symbolized video)</figcaption>
+    </figure>
+
+    <!-- ================= WRITE-UP ================= -->
+    <article class="prose">
+
+      <section id="design">
+        <h2>Gradio Demo</h2>
+        <figure>
+          <div class="media">
+            <video src="../assets/projects/vid2symbol/demo.mp4" autoplay muted loop playsinline></video>
+          </div>
+          <figcaption>Gradio UI walkthrough: <i>Interstellar</i> example</figcaption>
+        </figure>
+
+        <br>
+
+        <h2>Conversion Settings</h2>
+        <h3>Grayscale</h3>
+        <p> \(Luma \ =\  0.114 \times Blue + 0.587 \times Green + 0.299 \times Red\)<br> \(Perceived\ \ Luminance \ = 0.0722 \times Blue + 0.7152 \times Green + 0.2126 \times Red\)</p>
+
+        <h3>Preserve Input Resolution</h3>
+        <p>If checked, no initial downscaling. Every input pixel maps to its own character.<br>If unchecked, input video is downscaled such that output video has same dimensions.</p>
+
+        <h3>Symbol Size</h3>
+        <p>Character scale factor - Range: 1-10, Base dimension: 4px × 4px</p>
+
+        <h3>Character List</h3>
+        <p>Set of characters to convert to; Chinese characters supported!</p>
+
+        <br>
+
+        <h2>Gallery</h2>
+
+        <div class="media-grid">
+          <figure>
+            <div class="media">
+              <video src="../assets/projects/vid2symbol/water drop orig.mp4" autoplay muted loop playsinline></video>
+            </div>
+          </figure>
+          <figure>
+            <div class="media">
+              <video src="../assets/projects/vid2symbol/water drop symbol.mp4" autoplay muted loop playsinline></video>
+            </div>
+          </figure>
+          <figure>
+            <div class="media">
+              <video src="../assets/projects/vid2symbol/flowers orig.mp4" autoplay muted loop playsinline></video>
+            </div>
+          </figure>
+          <figure>
+            <div class="media">
+              <video src="../assets/projects/vid2symbol/flowers symbol.mp4" autoplay muted loop playsinline></video>
+            </div>
+          </figure>
+          <figure>
+            <div class="media">
+              <video src="../assets/projects/vid2symbol/swirl orig.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <figcaption>Input video</figcaption>
+          </figure>
+          <figure>
+            <div class="media">
+              <video src="../assets/projects/vid2symbol/swirl symbol.mp4" autoplay muted loop playsinline></video>
+            </div>
+            <figcaption>Output video (symbolized)</figcaption>
+          </figure>
+        </div>
+
+      </section>
+
+    </article>
+
+    <!-- Previous / next project links are generated from js/data.js -->
+    <nav class="project-nav" id="project-nav" aria-label="More projects"></nav>
+  </main>
+
+  <!-- ================= FOOTER / CONTACT ================= -->
+  <footer class="contact" id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <ul class="contact-links">
+        <li><a data-link="email" href="#"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a></li>
+        <li><a data-link="linkedin" href="#" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a></li>
+        <li><a data-link="github" href="#" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></li>
+        <li><a data-link="resume" href="../assets/resume.pdf" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>Resume</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
